@@ -1,0 +1,151 @@
+html, body {
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	font-family: "Anek Tamil", sans-serif;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+body {
+	background-color: #dff0fa;
+	color: #121212;
+  font-family: 16px;
+	padding-bottom: 20px;
+}
+.title {
+    font-family: "Anek Tamil", sans-serif;
+    text-align: center;
+    font-weight: 600;
+  }
+  .input {
+    font-family: "Anek Tamil", sans-serif;
+    font-weight: 500;
+    
+  }
+  textarea {
+    font-family: "Anek Tamil", sans-serif;
+    font-weight: 500;
+  }
+  .button {
+    font-family: "Anek Tamil", sans-serif;
+    margin-top: 10px;
+    font-weight: 700;
+  }
+pre {
+	background-color: #1e0922;
+	font-family: "Anek Tamil", sans-serif;
+	color: #7bed9f;
+	padding: 15px;
+	border-radius: 5px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+  word-wrap: break-word;
+}
+ .switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  margin-bottom: 20px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f44336;
+  transition: background-color 0.3s ease;
+  border-radius: 10px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: transform 0.3s ease;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #4CAF50;
+}
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+body.dark-mode {
+	background-color: #221d1d;
+	color: #121212;
+	padding-bottom: 20px;
+}
+.dark-mode pre {
+  background-color: #291010;
+  color: #7bed9f;
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+.text-all {
+  font-family: "Anek Tamil", sans-serif;
+  font-weight: 600;
+	color: #222523;
+}
+.dark-mode .text-all {
+  font-family: "Anek Tamil", sans-serif;
+	color: #f1d75f;
+}
+p {
+  font-family: "Anek Tamil", sans-serif;
+	color: #222523;
+  font-weight: 500;
+}
+.dark-mode p {
+  font-family: "Anek Tamil", sans-serif;
+	color: #f33e92;
+}
+.label {
+  font-family: "Anek Tamil", sans-serif;
+	color: #222523;
+  font-weight: 500;
+}
+.dark-mode .label {
+  font-family: "Anek Tamil", sans-serif;
+	color: #f33e92;
+}
+input::-webkit-input-placeholder {
+  color: #1f0505;
+}
+
+input:-moz-placeholder {
+  color: #1f0505;
+}
+
+input::-moz-placeholder {
+  color: #1f0505;
+}
+
+input:-ms-input-placeholder {
+  color: #1f0505;
+}
+.notification {
+  font-family: "Anek Tamil", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 35px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding-right: 60px;
+}
+.notification .delete {
+  margin-left: 15px;
+}
