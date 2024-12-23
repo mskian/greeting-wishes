@@ -37,9 +37,14 @@ pnpm start
 
 - `/` : input form for create Greeting
 - `/your-name` - Directly create a greeting page
+- `/nt/nt?name=your-name` - Create Greeting Wish image with Name
+- `/dl/dl?url=http://localhost:6020/nt/nt?name=your-name` - Download image  
 
 ```sh
-http://localhost:6020/your-name
+
+## Home page
+http://localhost:6020/
+
 ```
 
 ## LICENSE

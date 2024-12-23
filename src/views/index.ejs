@@ -18,15 +18,12 @@
   <link rel="stylesheet" href="/css/style.css">
 <style>
 .full-page {
-      display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      padding: 20px;
       text-align: center;
 }
 .glow-text {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
   color: #333;
   text-shadow: 
@@ -50,6 +47,7 @@
     0 0 30px #69e643, 
     0 0 35px #b5e495;
 }
+.download-url-button{padding:12px 24px;font-family: "Anek Tamil", sans-serif;font-size:15px;color:#2d3436;background:linear-gradient(to right,#f60,#fc0);border:none;border-radius:50px;cursor:pointer;text-transform:uppercase;font-weight:600}
 </style>
 </head>
 <body>
@@ -58,14 +56,24 @@
       <div class="container">
         <div class="columns is-centered">
           <div class="column is-three-fifths">
-            <h1 class="glow-text mb-6">🎄🎉🎁<br>Happy Holiday Wishes From <%= name %></h1>
-            <div class="toggle-container">
+            <div class="toggle-container mb-6">
               <label class="switch">
                   <input type="checkbox" id="darkModeToggle">
                   <span class="slider"></span>
               </label>
             </div>
-          </div>
+            <h1 class="glow-text mb-6">🎄🎉🎁<br>Happy Holiday Wishes From <%= name %></h1>
+            <div class="card">
+            <div class="card-image">
+            <figure class="image">
+            <img src="/nt/nt?name=<%= slug %>" alt="<%= name %>" loading="lazy">
+            </figure>
+            </div>
+            </div>
+            <div class="is-centered mt-6">
+            <a class="download-url-button" href="/nt/nt?name=<%= slug %>" download="<%= slug %>">Download Image</a>
+           </div>
+        </div>
         </div>
       </div>
     </section>
