@@ -9,8 +9,8 @@
     "start": "node dist/server.js"
   },
   "dependencies": {
+    "@napi-rs/canvas": "^0.1.65",
     "axios": "^1.7.9",
-    "canvas": "^2.11.2",
     "compression": "^1.7.5",
     "dompurify": "^3.2.3",
     "dotenv": "^16.4.7",
