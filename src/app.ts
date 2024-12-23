@@ -14,6 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({
     extended: true
 }));
+app.disable("x-powered-by");
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
