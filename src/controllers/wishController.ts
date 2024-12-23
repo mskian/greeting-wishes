@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { createCanvas, loadImage, registerFont } from 'canvas';
+import sharp from 'sharp';
 import path from 'path';
 import slugify from "slugify";
 import { JSDOM } from "jsdom";
@@ -32,9 +32,6 @@ const isValidHttpUrl = (url: string): boolean => {
   }
 };
 
-registerFont(fontPath, {
-  family: 'Catamaran',
-});
 
 export const getInputPage = (req: Request, res: Response) => {
   const current_page = 'https://' + req.headers.host + req.url;
@@ -78,21 +75,10 @@ export const getWishPage = (req: Request, res: Response) => {
   });
 };
 
-export const CreateImage = (req: Request, res: Response): void => {
- 
-  const width = 1080;
-  const height = 1080;
-  const canvas = createCanvas(width, height);
-  const context = canvas.getContext('2d');
-
-  context.textAlign = 'center';
-  context.textBaseline = 'top';
-  context.fillStyle = '#b8e994';
-  context.font = "36px 'Baloo Thambi 2' bold";
-
+export const CreateImage = async (req: Request, res: Response): Promise<void> => {
   const username = req.query.name?.toString() || 'Generating';
   const firstletter = username.charAt(0).toUpperCase() + username.slice(1);
-  const greeting = limit(firstletter, 36);
+  const greeting = firstletter.length > 36 ? firstletter.substring(0, 36) : firstletter;
   const firstname = slugify(greeting, {
     replacement: ' ',
     remove: /[*+~.()'"!:@]/g,
@@ -100,25 +86,27 @@ export const CreateImage = (req: Request, res: Response): void => {
     strict: false,
   });
 
-  const imagePath = Canvaimage;
+  try {
+    const imagePath = Canvaimage;
+    const image = await sharp(imagePath)
+      .resize(1080, 1080)
+      .composite([{
+        input: Buffer.from(`
+          <svg width="1080" height="1080">
+            <text x="50%" y="14%" text-anchor="middle" font-weight="bold" font-family="'Baloo Thambi 2'" font-size="36" fill="#b8e994">${firstname.replace(/[-]/g, ' ')}</text>
+          </svg>
+        `),
+        top: 0,
+        left: 0
+      }])
+      .toBuffer();
 
-  loadImage(imagePath)
-    .then((image) => {
- 
-      context.drawImage(image, 0, 0, width, height);
-
-      const text = firstname.replace(/[-]/g, ' ') || 'Hello World';
-      context.fillText(text, 537, 141);
-
-      const buffer = canvas.toBuffer('image/png');
-
-      res.set('Content-Type', 'image/png');
-      res.send(buffer);
-    })
-    .catch((err) => {
-      console.error('Error loading image:', err);
-      res.status(500).send('Internal Server Error');
-    });
+    res.set('Content-Type', 'image/png');
+    res.send(image);
+  } catch (err) {
+    console.error('Error processing image:', err);
+    res.status(500).send('Internal Server Error');
+  }
 };
 
 export const downloadImageHandler = async (req: Request, res: Response): Promise<void> => {
