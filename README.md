@@ -4,7 +4,9 @@ Send warm and personalized Holiday Wishes to your friends and family. Enter your
 
 **Note**  
 
-"I've created a personalized Greeting Wishes site for my friends and family members, hosted on my Android mobile yes, my Android mobile serves as the server. The network is tunneled via Cloudflare Argo Tunnel <https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/>."  
+"I've created a personalized Greeting Wishes site for my friends and family members,hosted on my Private VPS server.The network is tunneled via Cloudflare Argo Tunnel <https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/>."  
+
+"Termux has compatibility issues with NPM Canvas, so I recommend using a VPS server with Ubuntu, Node.js LTS, PNPM, PM2, and Cloudflare Tunnel. There’s no need to install servers like Nginx, Apache2, or Caddy.simply use Cloudflare Tunnel for reverse proxying."  
 
 ## Setup
 
