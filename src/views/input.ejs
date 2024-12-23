@@ -8,7 +8,7 @@
   <link href="/icon-192.png" rel="icon" sizes="192x192" type="image/png">
   <link href="/apple-touch-icon.png" rel="apple-touch-icon">
   <title>🎄 Holiday Wishes 🎉 - Send Personalized Holiday Wishes</title>
-  <meta property="og:description" content="Send warm and personalized Holiday wishes your to friends and family. Enter your name and get a custom holiday greeting message for the festive season.">
+  <meta property="og:description" content="Send warm and personalized holiday wishes to your friends and family members. Enter your name to receive a custom holiday greeting message for the festive season.">
   <link rel="canonical" href="<%= seourl %>" />
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/1.0.2/css/bulma.min.css" integrity="sha512-RpeJZX3aH5oZN3U3JhE7Sd+HG8XQsqmP3clIbu4G28p668yNsRNj3zMASKe1ATjl/W80wuEtCx2dFA8xaebG5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -22,15 +22,9 @@
     <div class="container">
       <div class="columns is-centered">
         <div class="column is-three-fifths">
-      <h1 class="title text-all is-5 mt-4 mb-5">🎄 Holiday Wishes 🎉</h1>
-      <p class="mb-3">🎁 Change Theme:</p>
-      <div class="toggle-container">
-        <label class="switch">
-            <input type="checkbox" id="darkModeToggle">
-            <span class="slider"></span>
-        </label>
-    </div>
-      <form id="nameForm">
+      <h1 class="title text-all is-5 mt-1 mb-5">🎄 Holiday Wishes 🎉</h1>
+      <div class="box">
+      <form id="nameForm" aria-label="Name Input Form">
           <div class="field">
             <label class="label">🎉 Enter your name:</label>
             <div class="control">
@@ -41,6 +35,34 @@
             <button class="button is-info" type="submit">Submit</button>
           </div>
         </form>
+        <div id="notification" class="notification mt-5">
+          <span></spap>
+          </div>
+      <p class="mb-2 mt-6">🎁 Change Theme:</p>
+      <div class="toggle-container">
+        <label class="switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider"></span>
+        </label>
+      </div>
+      </div>
+        <div class="box content mt-6">
+          <div class="content has-text-centered">
+            <p class="quote-text">
+              🎉 Greeting Wishes: A personalized greetings platform for friends and family.  
+            </p>
+            <p class="quote-text">
+              🥤 Built with ❤️ using Typescript, Express, and Bulma CSS.
+            </p>
+            <P class="quote-text">🥳 Send warm and personalized holiday wishes to your friends and family members.<br>Enter your name to receive a custom holiday greeting message for the festive season</P>
+            <p class="quote-text">
+              ➡ View the source code on <a href="https://github.com/mskian/greeting-wishes" target="_blank" rel="nofollow noopener" class="has-text-link">GitHub</a><br>
+              ➡ Hosted with <a href="https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/" target="_blank" rel="nofollow noopener" class="has-text-link">Cloudflare Argo Tunnel</a>
+            </p>
+            <p class="is-size-6 quote-text">
+              💚 MyGreeting Wishes - Spreading joy, one heartfelt message at a time.
+            </p>
+          </div>
     </div>
     </div>
     </div>

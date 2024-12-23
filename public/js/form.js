@@ -11,22 +11,11 @@ document.getElementById("nameForm").addEventListener("submit", function (event) 
   window.location.href = `/${encodeURIComponent(nameInput)}`;
 });
 
-function showNotification(message, type = "is-info") {
-  const notificationBox = document.createElement("div");
-  notificationBox.className = `notification ${type} mt-3`;
-  notificationBox.textContent = message;
-
-  const deleteButton = document.createElement("button");
-  deleteButton.className = "delete";
-  deleteButton.addEventListener("click", () => {
-    notificationBox.remove();
-  });
-  notificationBox.appendChild(deleteButton);
-
-  const formColumn = document.querySelector(".column.is-three-fifths");
-  formColumn.appendChild(notificationBox);
-
+function showNotification(message) {
+  const notification = document.getElementById('notification');
+  notification.querySelector('span').textContent = message;
+  notification.classList.add('is-active');
   setTimeout(() => {
-    notificationBox.remove();
+      notification.classList.remove('is-active');
   }, 2000);
 }

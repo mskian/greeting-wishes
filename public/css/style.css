@@ -104,7 +104,7 @@ body.dark-mode {
 }
 .dark-mode .text-all {
   font-family: "Anek Tamil", sans-serif;
-	color: #f1d75f;
+	color: #b4ebac;
 }
 p {
   font-family: "Anek Tamil", sans-serif;
@@ -113,7 +113,7 @@ p {
 }
 .dark-mode p {
   font-family: "Anek Tamil", sans-serif;
-	color: #f33e92;
+	color: #f0f33e;
 }
 .label {
   font-family: "Anek Tamil", sans-serif;
@@ -122,7 +122,7 @@ p {
 }
 .dark-mode .label {
   font-family: "Anek Tamil", sans-serif;
-	color: #f33e92;
+	color: #eee9ab;
 }
 input::-webkit-input-placeholder {
   color: #1f0505;
@@ -140,14 +140,47 @@ input:-ms-input-placeholder {
   color: #1f0505;
 }
 .notification {
-  font-family: "Anek Tamil", sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  margin-top: 35px;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  padding-right: 60px;
+    display: none;
+    position: center;
+    background-color: #72ac06;
+    color: rgb(26, 5, 5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: "Anek Tamil", sans-serif;
+    font-weight: 600;
+    align-items: center;
+    word-wrap: break-word;
+    overflow-x: auto;
 }
-.notification .delete {
-  margin-left: 15px;
+.notification.is-active {
+    display: block;
+}
+.box {
+  position: relative;
+  background: #f7faa7;
+  border: 1px solid #55072b;
+  color: #1a1601;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  padding: 30px;
+  padding-top: 68px;
+  padding-bottom: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: "Anek Tamil", sans-serif;
+  letter-spacing: .04em;
+}
+.quote-text {
+  font-size: 16px;
+  font-family: "Anek Tamil", sans-serif;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  text-align: left;
+  word-wrap: break-word;
+}
+.dark-mode .box {
+  background-image: linear-gradient(to right top, #32072b, #290924, #21081d, #1a0617, #10030e);
+  border: 1px solid #f5e026;
+}
+.dark-mode .quote-text {
+  color: rgb(255, 255, 255);
 }
