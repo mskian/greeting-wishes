@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { createCanvas, loadImage, GlobalFonts } from '@napi-rs/canvas';
-import path, { join } from 'path';
+import { createCanvas, loadImage, registerFont } from 'canvas';
+import path from 'path';
 import slugify from "slugify";
 import { JSDOM } from "jsdom";
 import DOMPurify from "dompurify";
@@ -8,9 +8,8 @@ import axios from 'axios';
 
 const window = new JSDOM("").window;
 const purify = DOMPurify(window);
-//const fontPath = path.resolve(__dirname, '..', 'canva', 'baloo.ttf');
+const fontPath = path.resolve(__dirname, '..', 'canva', 'baloo.ttf');
 const Canvaimage = path.resolve(__dirname, '..', 'canva', 'Happy-holiday.png');
-GlobalFonts.registerFromPath(join(__dirname, '..', 'canva', 'baloo.ttf'), 'Baloo Thambi 2')
 
 function limit(string: string = '', limit: number = 0): string {
   if (typeof string !== 'string' || string.length === 0 || limit <= 0) {
@@ -33,6 +32,9 @@ const isValidHttpUrl = (url: string): boolean => {
   }
 };
 
+registerFont(fontPath, {
+  family: 'Baloo Thambi 2',
+});
 
 export const getInputPage = (req: Request, res: Response) => {
   const current_page = 'https://' + req.headers.host + req.url;
