@@ -16,39 +16,72 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@100..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
-<style>
-.full-page {
+  <link rel="preload" href="/nt/nt?name=<%= slug %>" as="image">
+  <style>
+    .full-page {
       justify-content: center;
       align-items: center;
       text-align: center;
-}
-.glow-text {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #333;
-  text-shadow: 
-    0 0 5px #ff007f, 
-    0 0 10px #ff007f, 
-    0 0 15px #ff007f, 
-    0 0 20px #ff4d94, 
-    0 0 25px #ff4d94, 
-    0 0 30px #ff4d94, 
-    0 0 35px #ff80b3;
-  transition: all 0.3s ease;
-}
-.dark-mode .glow-text {
-  color: #fff;
-  text-shadow: 
-    0 0 5px #3fd611, 
-    0 0 10px #69e643, 
-    0 0 15px #69e643, 
-    0 0 20px #69e643, 
-    0 0 25px #69e643, 
-    0 0 30px #69e643, 
-    0 0 35px #b5e495;
-}
-.download-url-button{padding:12px 24px;font-family: "Anek Tamil", sans-serif;font-size:15px;color:#2d3436;background:linear-gradient(to right,#f60,#fc0);border:none;border-radius:50px;cursor:pointer;text-transform:uppercase;font-weight:600}
-</style>
+    }
+    .glow-text {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #333;
+      text-shadow: 
+        0 0 5px #ff007f, 
+        0 0 10px #ff007f, 
+        0 0 15px #ff007f, 
+        0 0 20px #ff4d94, 
+        0 0 25px #ff4d94, 
+        0 0 30px #ff4d94, 
+        0 0 35px #ff80b3;
+      transition: all 0.3s ease;
+    }
+    .dark-mode .glow-text {
+      color: #fff;
+      text-shadow: 
+        0 0 5px #3fd611, 
+        0 0 10px #69e643, 
+        0 0 15px #69e643, 
+        0 0 20px #69e643, 
+        0 0 25px #69e643, 
+        0 0 30px #69e643, 
+        0 0 35px #b5e495;
+    }
+    .download-url-button {
+      padding: 12px 24px;
+      font-family: "Anek Tamil", sans-serif;
+      font-size: 15px;
+      color: #2d3436;
+      background: linear-gradient(to right, #f60, #fc0);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .spinner {
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-top: 4px solid #3498db;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1.5s linear infinite;
+      display: none;
+      margin: 0 auto;
+      background-color: transparent;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    img {
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  </style>
 </head>
 <body>
   <div class="full-page">
@@ -58,26 +91,29 @@
           <div class="column is-three-fifths">
             <div class="toggle-container mb-6">
               <label class="switch">
-                  <input type="checkbox" id="darkModeToggle">
-                  <span class="slider"></span>
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider"></span>
               </label>
             </div>
             <h1 class="glow-text mb-6">🎄🎉🎁<br>Happy Holiday Wishes From <%= name %></h1>
-            <div class="card">
-            <div class="card-image">
-            <figure class="image">
-            <img src="/nt/nt?name=<%= slug %>" alt="<%= name %>" loading="lazy">
-            </figure>
-            </div>
-            </div>
+                <figure class="image">
+                  <div class="spinner" id="spinner"></div>
+                  <img src="/nt/nt?name=<%= slug %>" alt="<%= name %>" loading="lazy" onload="hideSpinner()" onerror="hideSpinner()">
+                </figure>
             <div class="is-centered mt-6">
-            <a class="download-url-button" href="/nt/nt?name=<%= slug %>" download="<%= slug %>">Download Image</a>
-           </div>
-        </div>
+              <a class="download-url-button" href="/nt/nt?name=<%= slug %>" download="<%= slug %>">Download Image</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </div>
+<script>
+document.getElementById('spinner').style.display = 'block';
+function hideSpinner() {
+  document.getElementById('spinner').style.display = 'none';
+}
+</script>
 <script src="/js/theme.js"></script>
 </body>
 </html>

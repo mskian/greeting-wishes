@@ -8,7 +8,7 @@ import axios from 'axios';
 
 const window = new JSDOM("").window;
 const purify = DOMPurify(window);
-const fontPath = path.resolve(__dirname, '..', 'canva', 'baloo.ttf');
+const fontPath = path.resolve(__dirname, '..', 'canva', 'Anek.ttf');
 const Canvaimage = path.resolve(__dirname, '..', 'canva', 'Happy-holiday.png');
 
 function limit(string: string = '', limit: number = 0): string {
@@ -33,7 +33,7 @@ const isValidHttpUrl = (url: string): boolean => {
 };
 
 registerFont(fontPath, {
-  family: 'Baloo Thambi 2',
+  family: 'Anek Tamil',
 });
 
 export const getInputPage = (req: Request, res: Response) => {
@@ -87,8 +87,14 @@ export const CreateImage = (req: Request, res: Response): void => {
 
   context.textAlign = 'center';
   context.textBaseline = 'top';
-  context.fillStyle = '#b8e994';
-  context.font = "36px 'Baloo Thambi 2' bold";
+  const gradient = context.createLinearGradient(0, 0, canvas.width, 0);
+  gradient.addColorStop(0.5, '#badc58');
+  gradient.addColorStop(0.1, '#44bd32');
+  gradient.addColorStop(1, '#44bd32');
+  context.fillStyle = gradient;
+  context.shadowColor = '#27ae60';
+  context.shadowBlur = 3;
+  context.font = "36px 'Anek Tamil' bold";
 
   const username = req.query.name?.toString() || 'Generating';
   const firstletter = username.charAt(0).toUpperCase() + username.slice(1);
