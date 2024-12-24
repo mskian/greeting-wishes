@@ -1,16 +1,14 @@
 {
-  "name": "greeting-wishes",
+  "name": "termux-greeting-wishes",
   "version": "0.0.1",
   "private": true,
   "main": "./dist/server.js",
   "scripts": {
     "dev": "nodemon src/server.ts",
-    "build": "tsc && node copy-canva.js",
+    "build": "tsc && node copy-public.js",
     "start": "node dist/server.js"
   },
   "dependencies": {
-    "axios": "^1.7.9",
-    "canvas": "^2.11.2",
     "compression": "^1.7.5",
     "dompurify": "^3.2.3",
     "dotenv": "^16.4.7",

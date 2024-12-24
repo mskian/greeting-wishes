@@ -7,8 +7,8 @@
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link href="/icon-192.png" rel="icon" sizes="192x192" type="image/png">
   <link href="/apple-touch-icon.png" rel="apple-touch-icon">
-  <title><%= name %> Sending you Happy Holiday Greetings and Wishes</title>
-  <meta property="og:description" content="Holiday Greetings and Wishes from <%= name %>.">
+  <title><%= name %> Here are your Happy Holiday Greetings and Wishes</title>
+  <meta property="og:description" content="Hey <%= name %> Here are your Happy Holiday Greetings and Wishes.">
   <link rel="canonical" href="<%= seourl %>" />
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/1.0.2/css/bulma.min.css" integrity="sha512-RpeJZX3aH5oZN3U3JhE7Sd+HG8XQsqmP3clIbu4G28p668yNsRNj3zMASKe1ATjl/W80wuEtCx2dFA8xaebG5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -16,7 +16,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@100..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="preload" href="/nt/nt?name=<%= slug %>" as="image">
   <style>
     .full-page {
       justify-content: center;
@@ -60,12 +59,6 @@
       text-transform: uppercase;
       font-weight: 600;
     }
-    img {
-      position: relative;
-      display: inline-block;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
   </style>
 </head>
 <body>
@@ -80,17 +73,9 @@
                 <span class="slider"></span>
               </label>
             </div>
-            <h1 class="glow-text mb-6">🎄🎉🎁<br>Happy Holiday Wishes From <%= name %></h1>
-                <figure class="image">
-                  <img src="/nt/nt?name=<%= slug %>" alt="<%= name %>" loading="lazy">
-                </figure>
-            <div class="is-centered mt-6">
-              <a class="download-url-button" href="/nt/nt?name=<%= slug %>" download="<%= slug %>">Download Image</a>
-            </div>
-            <div class="box is-centered mt-6">
-              <p class="text-all mb-5">🎉 Create your Own Greeting Wishes</p>
-              <a class="download-url-button" href="/">Create Now</a>
-              <br><br>
+            <h1 class="glow-text mt-6 mb-6">🎄🎉🎁<br>Happy Holiday Wishes<br><%= name %></h1>
+            <div class="is-centered mt-6 mb-6">
+            <p class="text-all is-size-5">"Cheers to a season of giving, a season of joy, and a season of love. Happy Holidays to you and your family"</p>
             </div>
           </div>
         </div>
