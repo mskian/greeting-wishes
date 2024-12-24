@@ -9,6 +9,11 @@ Send warm and personalized holiday wishes to your friends and family members. En
 ## Setup
 
 - Download or Clone the repo
+
+```sh
+git clone --branch termux https://github.com/mskian/greeting-wishes/
+```
+
 - install dependencies
 
 ```sh
