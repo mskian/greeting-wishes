@@ -7,8 +7,8 @@
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link href="/icon-192.png" rel="icon" sizes="192x192" type="image/png">
   <link href="/apple-touch-icon.png" rel="apple-touch-icon">
-  <title><%= name %> Here are your Happy Holiday Greetings and Wishes</title>
-  <meta property="og:description" content="Hey <%= name %> Here are your Happy Holiday Greetings and Wishes.">
+  <title><%= name %> - Here are your Happy Holiday Greetings and Wishes</title>
+  <meta property="og:description" content="Hey <%= name %> - Here are your Happy Holiday Greetings and Wishes.">
   <link rel="canonical" href="<%= seourl %>" />
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/1.0.2/css/bulma.min.css" integrity="sha512-RpeJZX3aH5oZN3U3JhE7Sd+HG8XQsqmP3clIbu4G28p668yNsRNj3zMASKe1ATjl/W80wuEtCx2dFA8xaebG5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -59,6 +59,140 @@
       text-transform: uppercase;
       font-weight: 600;
     }
+.wrapper {
+  max-width: 100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.emoji {
+  position: relative; 
+  display: inline-block;
+}
+.face {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  margin: 0 15px 30px 0;
+  border-radius: 50%;
+  background: #eed440;
+}
+.dark-mode .face {
+  background: #F2DD68;
+}
+.face:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -8px;
+  left: -8px;
+  border-radius: 50%;
+  box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 0.07);
+}
+.eye {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  top: 32px;
+  left: 16px;
+  z-index: 1;
+  border-radius: 50%;
+  background: #995710;
+}
+.eye:last-child {
+  left: auto;
+  right: 16px;
+}
+@keyframes blink {
+  0%, 100% {
+    height: 11px;
+    top: 32px;
+    transform: scaleY(1);
+  }
+  30% {
+    height: 5px;
+    top: 34px;
+    transform: scaleY(0.5);
+  }
+  60% {
+    height: 8px;
+    top: 33px;
+    transform: scaleY(0.8);
+  }
+}
+.emoji:hover .eye,
+.emoji:active .eye {
+  animation-name: blink;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+@media (max-width: 768px) {
+  .face {
+    width: 80px;
+    height: 80px;
+  }
+  .eye {
+    width: 9px;
+    height: 9px;
+    top: 28px;
+  }
+  .mouth {
+    width: 60px;
+    height: 30px;
+    top: 40px;
+  }
+}
+.mouth {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  width: 70px;
+  height: 34px;
+  margin: 0 auto;
+  border-radius: 0 0 70px 70px;
+  overflow: hidden;
+  background: #995710;
+}
+.mouth:before,
+.mouth:after {
+  content: '';
+  position: absolute;
+  display: block;
+}
+.mouth.teath:before {
+  width: 100%;
+  height: 10px;
+  z-index: 2;
+  background: #fffae6;
+}
+.mouth.tounge:after {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  left: 0;
+  right: 0;
+  top: 15px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: #d8aa2b;
+}
+.smile .mouth {
+  width: 50px;
+  height: 25px;
+  background: transparent;
+  border-radius: 0 0 50px 50px;
+  border: 4px solid #995710;
+  border-top: 0;
+  -webkit-clip-path: inset(30% 0 0 0);
+  clip-path: inset(30% 0 0 0);
+}
   </style>
 </head>
 <body>
@@ -74,8 +208,19 @@
               </label>
             </div>
             <h1 class="glow-text mt-6 mb-6">🎄🎉🎁<br>Happy Holiday Wishes<br><%= name %></h1>
-            <div class="is-centered mt-6 mb-6">
-            <p class="text-all is-size-5">"Cheers to a season of giving, a season of joy, and a season of love. Happy Holidays to you and your family"</p>
+            <div class="emoji smile is-centered">
+              <figure class="face">
+                <span class="eyes">
+                  <span class="eye"></span>
+                  <span class="eye"></span>
+                </span>
+                <span class="mouth">
+                </span>
+              </figure>
+            </div>
+            <div class="is-centered mb-6">
+            <p class="text-all is-size-5">
+              "Cheers to a season of giving, a season of joy, and a season of love. Happy Holidays to you and your family"</p>
             </div>
           </div>
         </div>
