@@ -142,8 +142,8 @@ input:-ms-input-placeholder {
 .notification {
     display: none;
     position: center;
-    background-color: #72ac06;
-    color: rgb(26, 5, 5);
+    background-color: #8d290b;
+    color: rgb(245, 243, 147);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     font-family: "Anek Tamil", sans-serif;
     font-weight: 600;
@@ -153,6 +153,10 @@ input:-ms-input-placeholder {
 }
 .notification.is-active {
     display: block;
+}
+.dark-mode .notification {
+  background-color: #b9f843;
+  color: rgb(26, 5, 5);
 }
 .box {
   position: relative;
