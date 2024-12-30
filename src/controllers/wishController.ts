@@ -9,7 +9,7 @@ import axios from 'axios';
 const window = new JSDOM("").window;
 const purify = DOMPurify(window);
 const fontPath = path.resolve(__dirname, '..', 'canva', 'Anek.ttf');
-const Canvaimage = path.resolve(__dirname, '..', 'canva', 'Happy-holiday.png');
+const Canvaimage = path.resolve(__dirname, '..', 'canva', 'Happy-newyear-2025.png');
 
 function limit(string: string = '', limit: number = 0): string {
   if (typeof string !== 'string' || string.length === 0 || limit <= 0) {
