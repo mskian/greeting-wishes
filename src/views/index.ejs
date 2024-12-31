@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@100..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
-  <style>
+<style>
     .full-page {
       justify-content: center;
       align-items: center;
@@ -193,7 +193,92 @@
   -webkit-clip-path: inset(30% 0 0 0);
   clip-path: inset(30% 0 0 0);
 }
-  </style>
+.squid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+}
+.symbol {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  will-change: transform;
+  animation: float 3s infinite cubic-bezier(0.5, 0.05, 0.25, 1);
+}
+.triangle {
+  background: none;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  background-color: #ff0050;
+}
+.circle {
+  background-color: #00ff90;
+  border-radius: 50%;
+}
+.square {
+  background-color: #007fff;
+}
+.symbol[aria-label] {
+  display: inline-block;
+  text-indent: -9999px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .symbol {
+    width: 60px;
+    height: 60px;
+  }
+  .squid-container {
+    gap: 1.5rem;
+  }
+}
+.heading-container {
+  text-align: center;
+}
+.squid-heading {
+  font-family: "Anek Tamil", sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: transparent;
+  background: linear-gradient(90deg, #ff0050, #00ff90, #007fff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.2);
+  animation: gradient-shift 5s infinite alternate ease-in-out;
+  will-change: background-position;
+}
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+@media (max-width: 768px) {
+  .squid-heading {
+    font-size: 2.1rem;
+  }
+}
+.squid-text {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #333;
+      text-shadow: 
+        0 0 5px #ff007f, 
+        0 0 10px #ff007f, 
+        0 0 15px #ff007f, 
+        0 0 20px #ff4d94, 
+        0 0 25px #ff4d94, 
+        0 0 30px #ff4d94, 
+        0 0 35px #ff80b3;
+      transition: all 0.3s ease;
+    }
+</style>
 </head>
 <body>
   <div class="full-page">
@@ -207,8 +292,16 @@
                 <span class="slider"></span>
               </label>
             </div>
-            <h1 class="glow-text mt-6 mb-6">🎄🎉🎁<br>Happy New Year 2025<br><%= name %></h1>
-            <div class="emoji smile is-centered">
+            <!--<h1 class="glow-text mt-6 mb-6">🎄🎉🎁<br>Happy New Year 2025<br><%= name %></h1>-->
+            <div class="heading-container">
+            <h1 class="squid-text mt-6 mb-6"><%= name %></h1>
+            </div>
+            <div class="squid-container mt-6 mb-6">
+            <div class="symbol triangle" aria-label="Triangle"></div>
+            <div class="symbol circle" aria-label="Circle"></div>
+            <div class="symbol square" aria-label="Square"></div>
+           </div>
+            <!---<div class="emoji smile is-centered">
               <figure class="face">
                 <span class="eyes">
                   <span class="eye"></span>
@@ -217,10 +310,10 @@
                 <span class="mouth">
                 </span>
               </figure>
-            </div>
+            </div>-->
             <div class="is-centered mb-6">
             <p class="text-all is-size-5">
-              "Cheers to a season of giving, a season of joy, and a season of love. Happy Holidays to you and your family"</p>
+              "In the game of life, every year is a new round. The stakes are high, the risks are real, and the odds are against us. But remember, no matter how many times we fall, we rise again. This New Year, let's play with courage, outsmart the game, and conquer what seems impossible"</p>
             </div>
           </div>
         </div>
