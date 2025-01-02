@@ -1,6 +1,6 @@
-# 🎄 Holiday Wishes 🎉  
+# Greeting Maker 🎉  
 
-Send warm and personalized holiday wishes to your friends and family members. Enter your name to receive a custom holiday greeting message for the festive season.  
+Send warm and personalized greeting wishes to your friends and family members. Enter your name to receive a custom greeting wishes for the festive season.  
 
 **Note**  
 

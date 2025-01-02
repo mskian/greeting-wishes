@@ -9,7 +9,7 @@ import axios from 'axios';
 const window = new JSDOM("").window;
 const purify = DOMPurify(window);
 const fontPath = path.resolve(__dirname, '..', 'canva', 'Anek.ttf');
-const Canvaimage = path.resolve(__dirname, '..', 'canva', 'sqdg-style-newyear-wishes.png');
+const Canvaimage = path.resolve(__dirname, '..', 'canva', 'happy-pongal-kavithai-images-2.png');
 
 function limit(string: string = '', limit: number = 0): string {
   if (typeof string !== 'string' || string.length === 0 || limit <= 0) {
@@ -88,11 +88,11 @@ export const CreateImage = (req: Request, res: Response): void => {
   context.textAlign = 'center';
   context.textBaseline = 'top';
   const gradient = context.createLinearGradient(0, 0, canvas.width, 0);
-  gradient.addColorStop(0.5, '#badc58');
-  gradient.addColorStop(0.1, '#44bd32');
-  gradient.addColorStop(1, '#44bd32');
+  gradient.addColorStop(0.5, '#6F1E51');
+  gradient.addColorStop(0.1, '#D980FA');
+  gradient.addColorStop(1, '#D980FA');
   context.fillStyle = gradient;
-  context.shadowColor = '#27ae60';
+  context.shadowColor = '#6F1E51';
   context.shadowBlur = 3;
   context.font = "38px 'Anek Tamil' bold";
 
@@ -114,7 +114,7 @@ export const CreateImage = (req: Request, res: Response): void => {
       context.drawImage(image, 0, 0, width, height);
 
       const text = firstname.replace(/[-]/g, ' ') || 'Hello World';
-      context.fillText(text, 526, 148);
+      context.fillText(text, 526, 90);
 
       const buffer = canvas.toBuffer('image/png');
 
