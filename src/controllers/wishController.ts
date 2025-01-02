@@ -88,11 +88,11 @@ export const CreateImage = (req: Request, res: Response): void => {
   context.textAlign = 'center';
   context.textBaseline = 'top';
   const gradient = context.createLinearGradient(0, 0, canvas.width, 0);
-  gradient.addColorStop(0.5, '#6F1E51');
-  gradient.addColorStop(0.1, '#D980FA');
+  gradient.addColorStop(0.5, '#B53471');
+  gradient.addColorStop(0.1, '#B53471');
   gradient.addColorStop(1, '#D980FA');
   context.fillStyle = gradient;
-  context.shadowColor = '#6F1E51';
+  context.shadowColor = '#B53471';
   context.shadowBlur = 3;
   context.font = "38px 'Anek Tamil' bold";
 
